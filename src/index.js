@@ -15,7 +15,7 @@ const listCon = [
 
 const doList = document.querySelector('.list');
 const listItem = () => {
-  for (let i= 0; i< listCon.length; i +=1){
+  for (let i = 0; i < listCon.length; i += 1) {
     const li = document.createElement('li');
     li.classList.add('list-item');
     li.innerHTML = `<input type="checkbox" name="${listCon[i].index}" id="${listCon[i].index}">
@@ -23,6 +23,5 @@ const listItem = () => {
     `;
     doList.appendChild(li);
   }
-  
 };
 listItem();
