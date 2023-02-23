@@ -1,17 +1,28 @@
-import _ from 'lodash';
 import './style.css';
 
-function component() {
-  const element = document.createElement('div');
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-  return element;
-}
+const listCon = [
+  {
+    description: 'Task one',
+    completed: true,
+    index: 0,
+  },
+  {
+    description: 'Task two',
+    completed: false,
+    index: 1,
+  },
+];
+
 const doList = document.querySelector('.list');
 const listItem = () => {
-  const li = document.createElement('li');
-  li.classList.add('list-item');
-  doList.appendChild(li);
+  for (let i= 0; i< listCon.length; i +=1){
+    const li = document.createElement('li');
+    li.classList.add('list-item');
+    li.innerHTML = `<input type="checkbox" name="${listCon[i].index}" id="${listCon[i].index}">
+    <label for="${listCon[i].index}">${listCon[i].description}</label>
+    `;
+    doList.appendChild(li);
+  }
+  
 };
 listItem();
-document.body.appendChild(component());
