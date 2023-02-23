@@ -93,7 +93,7 @@ For this projec design I am using form to create localstorage data and class obj
 
 > For using this porject simple colne this repo and run it in your local computer.
 
-In order to run this project you need: 1. A computer 2. A internet Browser. 3. Clone git : https://github.com/imranhossainemi/to_do_list.git
+In order to run this project you need: 1. A computer 2. A internet Browser. 3. Clone git : https://github.com/imranhossainemi/to-do-list.git
 4.open index.html with your browser or text eidtor
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
