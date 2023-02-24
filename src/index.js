@@ -1,6 +1,5 @@
 import './style.css';
 import List from './list.js';
-// import interactive from './interactive.js';
 
 const list = new List();
 
