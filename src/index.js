@@ -6,7 +6,6 @@ const list = new List();
 
 list.addTask();
 list.showTask();
-// interactive();
 const emi = document.querySelectorAll('#emi');
 const label = document.querySelectorAll('.label');
 emi.forEach((item) => item.addEventListener('click', (e) => {
