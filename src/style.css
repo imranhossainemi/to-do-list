@@ -1,3 +1,153 @@
-.hello {
-  color: red;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.do-list {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.do-list .container {
+  width: 400px;
+  height: auto;
+}
+
+.do-list .container .stats {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid hsl(0, 0%, 0%);
+  padding: 15px 5px;
+}
+
+.do-list .container .list {
+  width: 100%;
+  height: auto;
+}
+
+.do-list .container .list .items {
+  list-style: none;
+}
+
+.do-list .container .list #add-items li {
+  width: 100%;
+  padding: 15px 5px;
+  border-bottom: 1px solid hsl(0, 0%, 0%);
+}
+
+.do-list .container .list #add-items li form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.do-list .container .list #add-items li form #new-item {
+  width: 70%;
+  border: none;
+  padding: 10px 5px;
+}
+
+.do-list .container .list #add-items li form #submit-new-item {
+  width: 10%;
+  background-image: url('./enter.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+}
+
+.do-list .container .list #item-list {
+  width: 100%;
+  height: auto;
+}
+
+.do-list .container .list #item-list .todo {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5px;
+  border-bottom: 1px solid hsl(0, 0%, 0%);
+}
+
+.do-list .container .list #item-list .todo .toggle {
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: 1px solid hsl(0, 0%, 0%);
+  cursor: pointer;
+  color: transparent;
+}
+
+.do-list .container .list #item-list .todo.completed .toggle {
+  border: none;
+  color: hsl(120, 100%, 25%);
+  font-size: large;
+}
+
+.do-list .container .list #item-list .todo .view .label {
+  display: block;
+}
+
+.do-list .container .list #item-list .todo.editting .view .label {
+  display: none;
+}
+
+.do-list .container .list #item-list .todo.completed .view .label {
+  display: block;
+  text-decoration: line-through;
+}
+
+.do-list .container .list #item-list .todo .view .edit {
+  display: none;
+}
+
+.do-list .container .list #item-list .todo.editting .view .edit {
+  display: block;
+  border: none;
+}
+
+.do-list .container .list #item-list .todo.completed .view .edit {
+  display: none;
+}
+
+.do-list .container .list #item-list .todo .ver {
+  display: block;
+}
+
+.do-list .container .list #item-list .todo.editting .ver {
+  display: none;
+}
+
+.do-list .container .list #item-list .todo.completed .ver {
+  display: block;
+}
+
+.do-list .container .list #item-list .todo .trash {
+  display: none;
+}
+
+.do-list .container .list #item-list .todo.editting .trash {
+  display: block;
+}
+
+.do-list .container .list #item-list .todo.completed .trash {
+  display: none;
+}
+
+.do-list .container .link-button {
+  width: 100%;
+  padding: 20px 0;
+  cursor: pointer;
+  font-size: large;
+  margin-top: 5px;
 }
