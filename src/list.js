@@ -32,8 +32,10 @@ export default class List {
       let li = '';
       listArr.forEach((elem, index) => {
         li += `
-        <li class="todo">
-        <button class="tog" type="button" title="check!" alt="check!" tabindex="0" id="emi">
+        <li class="todo" id="todo">
+        <button class="tskTog" type="button" title="check!" alt="check!" tabindex="0" id="emi">
+        </button>
+        <button class="tskTog2" type="button" title="check!" alt="check!" tabindex="0" id="emi2">
           <i class="fa-sharp fa-solid fa-square-check"></i>
         </button>
         
@@ -66,6 +68,22 @@ export default class List {
       }));
     };
     removeTask();
+    const removeComplete = () => {
+      let obj = JSON.parse(localStorage.getItem('task'));
+      listArr = obj;
+      listArr = listArr.filter((element) => !element.completed);
+      obj = listArr;
+      obj.forEach((tsk) => {
+        tsk.index = obj.indexOf(tsk);
+      });
+      window.localStorage.setItem('task', JSON.stringify(obj));
+      window.location.reload();
+      this.showTask();
+    };
+    document.querySelector('.clear-completed').addEventListener('click', (e) => {
+      e.preventDefault();
+      removeComplete();
+    });
     const editTask = () => {
       const edit = document.querySelectorAll('.edit');
       edit.forEach((et) => et.addEventListener('dblclick', () => {
