@@ -33,13 +33,13 @@ export default class List {
         const li = document.createElement('li');
         li.classList.add('todo');
         li.innerHTML = `
-        <button class="toggle" type="button" title="check!" alt="check!" tabindex="0">
+        <button class="tog" type="button" title="check!" alt="check!" tabindex="0" id="emi">
           <i class="fa-sharp fa-solid fa-square-check"></i>
         </button>
         
         <div class="view">
-          <label class="label" tabindex="0" for="${index}">${elem.description}</label>
-          <textarea class="edit input" maxlength="255" name="${index}">${elem.description}</textarea>
+          <label class="label" tabindex="0" for="${elem.index}">${elem.description}</label>
+          <input type="text" class="edit input" maxlength="255" name="${elem.index}" value="${elem.description}" >
         </div>
     
         <div class="ver"><i class="fa-sharp fa-solid fa-ellipsis-vertical"></i></div>
