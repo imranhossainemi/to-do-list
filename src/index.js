@@ -7,14 +7,16 @@ const list = new List();
 list.addTask();
 list.showTask();
 // interactive();
-const emi = document.getElementById('emi');
-const label = document.querySelector('.label');
-const todo = document.querySelector('.todo');
-emi.addEventListener('click', (e) => {
+const emi = document.querySelectorAll('#emi');
+const label = document.querySelectorAll('.label');
+emi.forEach((item) => item.addEventListener('click', (e) => {
+  const todo = item.parentElement;
   e.preventDefault();
   todo.classList.toggle('completed');
-});
-label.addEventListener('click', (e) => {
+}));
+label.forEach((lab) => lab.addEventListener('click', (e) => {
+  const view = lab.parentElement;
+  const todo = view.parentElement;
   e.preventDefault();
   todo.classList.toggle('editting');
-});
+}));
