@@ -42,3 +42,16 @@ label.forEach((lab) => lab.addEventListener('click', (e) => {
   e.preventDefault();
   todo.classList.toggle('editting');
 }));
+const mkComFls = () => {
+  const toDoL = document.querySelectorAll('.todo');
+  toDoL.forEach((mi, v) => {
+    if (mi || !list.listArr[v].completed) {
+      let obj = JSON.parse(localStorage.getItem('task'));
+      list.listArr = obj;
+      list.listArr[v].completed = false;
+      obj = list.listArr;
+      window.localStorage.setItem('task', JSON.stringify(obj));
+    }
+  });
+};
+mkComFls();
