@@ -10,7 +10,7 @@ export default class List {
     document.querySelector('form').addEventListener('submit', () => {
       const description = document.getElementById('new-item').value;
       const completed = false;
-      let index = 1;
+      const index = listArr.length;
       if (description) {
         const newTask = {
           description,
@@ -20,7 +20,6 @@ export default class List {
         listArr.push(newTask);
         localStorage.setItem('task', JSON.stringify(listArr));
         this.showTask();
-        index += 1;
       }
     });
   };
@@ -58,7 +57,10 @@ export default class List {
         listArr = obj;
         listArr = listArr.filter((element, index) => index !== removeId);
         obj = listArr;
-        localStorage.setItem('task', JSON.stringify(obj));
+        obj.forEach((tsk) => {
+          tsk.index = obj.indexOf(tsk);
+        });
+        window.localStorage.setItem('task', JSON.stringify(obj));
         window.location.reload();
         this.showTask();
       }));
