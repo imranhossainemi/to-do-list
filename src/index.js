@@ -13,13 +13,23 @@ const listCon = [
   },
 ];
 
-const doList = document.querySelector('.list');
+const doList = document.querySelector('#item-list');
 const listItem = () => {
   for (let i = 0; i < listCon.length; i += 1) {
     const li = document.createElement('li');
-    li.classList.add('list-item');
-    li.innerHTML = `<input type="checkbox" name="${listCon[i].index}" id="${listCon[i].index}">
-    <label for="${listCon[i].index}">${listCon[i].description}</label>
+    li.classList.add('todo');
+    li.innerHTML = `
+    <button class="toggle" type="button" title="check!" alt="check!" tabindex="0">
+      <i class="fa-sharp fa-solid fa-square-check"></i>
+    </button>
+    
+    <div class="view">
+      <label class="label" tabindex="0" for="${listCon[i].index}">${listCon[i].description}</label>
+      <textarea class="edit input" maxlength="255" name="${listCon[i].index}">${listCon[i].description}</textarea>
+    </div>
+
+    <div class="ver"><i class="fa-sharp fa-solid fa-ellipsis-vertical"></i></div>
+    <div class="trash"><i class="fa-sharp fa-solid fa-trash"></i></div>
     `;
     doList.appendChild(li);
   }
