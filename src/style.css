@@ -79,7 +79,7 @@
   border-bottom: 1px solid hsl(0, 0%, 0%);
 }
 
-.do-list .container .list #item-list .todo .toggle {
+.do-list .container .list #item-list .todo .tog {
   width: 20px;
   height: 20px;
   background: none;
@@ -88,7 +88,7 @@
   color: transparent;
 }
 
-.do-list .container .list #item-list .todo.completed .toggle {
+.do-list .container .list #item-list .todo.completed .tog {
   border: none;
   color: hsl(120, 100%, 25%);
   font-size: large;
