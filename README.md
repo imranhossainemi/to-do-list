@@ -67,14 +67,12 @@ For this projec design I am using form to create localstorage data and class obj
 
 ### Key Features <a name="key-features"></a>
 
-> Currently do not have any key features
+- **[CRUD to do list ]**
+  > Create Read Update & Delete To Do List item.
+  <!--
+  - **[key_feature_2]**
+  - **[key_feature_3]** -->
 
-<!--
-- **[Validate Email Input]**
-
-- **[key_feature_2]**
-- **[key_feature_3]**
--->
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
