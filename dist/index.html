@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
+    <title>To DO List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
 <body>
     <section class="do-list">
       <div class="container">
-        <ul class="list">
-          <li class="list-item">Today's To Do List</li>
-          <li class="list-item"><input type="text" name="list" placeholder="add to your list"></li>
-        </ul>
+        <div class="stats">
+          <h2>Today's to do list</h2>
+          <div class="refresh">
+            <i class="fa-sharp fa-solid fa-arrows-rotate"></i>
+          </div>
+        </div>
+        <div class="list">
+          <ul id="add-items" class="items">
+            <li>
+              <form>
+                <input type="text" id="new-item" class="input" placeholder="Add to your list...">
+                <input type="submit" id="submit-new-item" class="icon" tabindex="-1" value="" title="click this or press enter to submit">
+              </form>
+            </li>
+          </ul>
+          <!-- end add-items -->
+          <ul id="item-list" class="items ui-sortable">
+          </ul>
+          <!-- item list end -->
+        </div>
+        <button class="link-button clear-completed js-clear-completed" type="button">Clear all completed Task</button>
       </div>
     </section>  
 </body>
