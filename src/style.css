@@ -68,7 +68,7 @@
   height: auto;
 }
 
-.do-list .container .list #item-list .todo {
+.do-list .container .list #item-list #todo {
   width: 100%;
   height: auto;
   display: flex;
@@ -79,69 +79,80 @@
   border-bottom: 1px solid hsl(0, 0%, 0%);
 }
 
-.do-list .container .list #item-list .todo .toggle {
+.do-list .container .list #item-list .todo #emi {
   width: 20px;
   height: 20px;
   background: none;
   border: 1px solid hsl(0, 0%, 0%);
   cursor: pointer;
   color: transparent;
-}
-
-.do-list .container .list #item-list .todo.completed .toggle {
-  border: none;
-  color: hsl(120, 100%, 25%);
-  font-size: large;
-}
-
-.do-list .container .list #item-list .todo .view .label {
   display: block;
 }
 
-.do-list .container .list #item-list .todo.editting .view .label {
+.do-list .container .list #item-list .completed #emi {
   display: none;
 }
 
-.do-list .container .list #item-list .todo.completed .view .label {
+.do-list .container .list #item-list .completed .trash {
+  display: none;
+}
+
+.do-list .container .list #item-list .completed .view .label {
   display: block;
   text-decoration: line-through;
 }
 
-.do-list .container .list #item-list .todo .view .edit {
+.do-list .container .list #item-list .completed .view .edit {
   display: none;
 }
 
-.do-list .container .list #item-list .todo.editting .view .edit {
+.do-list .container .list #item-list .completed .ver {
+  display: block;
+}
+
+.do-list .container .list #item-list #todo .view .edit {
+  display: none;
+}
+
+.do-list .container .list #item-list .todo #emi2 {
+  display: none;
+}
+
+.do-list .container .list #item-list .completed #emi2 {
+  border: none;
+  color: hsl(120, 100%, 25%);
+  font-size: large;
+  display: block;
+  cursor: pointer;
+}
+
+.do-list .container .list #item-list #todo .view .label {
+  display: block;
+}
+
+.do-list .container .list #item-list #todo.editting .view .label {
+  display: none;
+}
+
+.do-list .container .list #item-list #todo.editting .view .edit {
   display: block;
   border: none;
 }
 
-.do-list .container .list #item-list .todo.completed .view .edit {
-  display: none;
-}
-
-.do-list .container .list #item-list .todo .ver {
+.do-list .container .list #item-list #todo .ver {
   display: block;
 }
 
-.do-list .container .list #item-list .todo.editting .ver {
+.do-list .container .list #item-list #todo.editting .ver {
   display: none;
 }
 
-.do-list .container .list #item-list .todo.completed .ver {
+.do-list .container .list #item-list #todo .trash {
+  display: none;
+}
+
+.do-list .container .list #item-list #todo.editting .trash {
   display: block;
-}
-
-.do-list .container .list #item-list .todo .trash {
-  display: none;
-}
-
-.do-list .container .list #item-list .todo.editting .trash {
-  display: block;
-}
-
-.do-list .container .list #item-list .todo.completed .trash {
-  display: none;
 }
 
 .do-list .container .link-button {

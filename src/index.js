@@ -1,37 +1,57 @@
 import './style.css';
+import List from './list.js';
 
-const listCon = [
-  {
-    description: 'Task one',
-    completed: true,
-    index: 0,
-  },
-  {
-    description: 'Task two',
-    completed: false,
-    index: 1,
-  },
-];
+const list = new List();
 
-const doList = document.querySelector('#item-list');
-const listItem = () => {
-  for (let i = 0; i < listCon.length; i += 1) {
-    const li = document.createElement('li');
-    li.classList.add('todo');
-    li.innerHTML = `
-    <button class="toggle" type="button" title="check!" alt="check!" tabindex="0">
-      <i class="fa-sharp fa-solid fa-square-check"></i>
-    </button>
-    
-    <div class="view">
-      <label class="label" tabindex="0" for="${listCon[i].index}">${listCon[i].description}</label>
-      <textarea class="edit input" maxlength="255" name="${listCon[i].index}">${listCon[i].description}</textarea>
-    </div>
-
-    <div class="ver"><i class="fa-sharp fa-solid fa-ellipsis-vertical"></i></div>
-    <div class="trash"><i class="fa-sharp fa-solid fa-trash"></i></div>
-    `;
-    doList.appendChild(li);
-  }
+list.addTask();
+list.showTask();
+const emi = document.querySelectorAll('#emi');
+const emi2 = document.querySelectorAll('.tskTog2');
+const label = document.querySelectorAll('.label');
+const comTask = () => {
+  emi.forEach((item, i) => item.addEventListener('click', (e) => {
+    const todo = item.parentElement;
+    e.preventDefault();
+    todo.classList.add('completed');
+    todo.classList.remove('todo');
+    let obj = JSON.parse(localStorage.getItem('task'));
+    list.listArr = obj;
+    list.listArr[i].completed = true;
+    obj = list.listArr;
+    window.localStorage.setItem('task', JSON.stringify(obj));
+  }));
 };
-listItem();
+comTask();
+const rmvComTask = () => {
+  emi2.forEach((im, l) => im.addEventListener('click', (e) => {
+    const todo = im.parentElement;
+    e.preventDefault();
+    todo.classList.add('todo');
+    todo.classList.remove('completed');
+    let obj = JSON.parse(localStorage.getItem('task'));
+    list.listArr = obj;
+    list.listArr[l].completed = false;
+    obj = list.listArr;
+    window.localStorage.setItem('task', JSON.stringify(obj));
+  }));
+};
+rmvComTask();
+label.forEach((lab) => lab.addEventListener('click', (e) => {
+  const view = lab.parentElement;
+  const todo = view.parentElement;
+  e.preventDefault();
+  todo.classList.toggle('editting');
+}));
+const mkComFls = () => {
+  const toDoL = document.querySelectorAll('.todo');
+  toDoL.forEach((mi, v) => {
+    if (mi || !list.listArr[v].completed) {
+      let obj = JSON.parse(localStorage.getItem('task'));
+      list.listArr = obj;
+      list.listArr[v].completed = false;
+      obj = list.listArr;
+      window.localStorage.setItem('task', JSON.stringify(obj));
+    }
+  });
+};
+mkComFls();
