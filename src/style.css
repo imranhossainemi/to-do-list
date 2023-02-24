@@ -93,6 +93,27 @@
   display: none;
 }
 
+.do-list .container .list #item-list .completed .trash {
+  display: none;
+}
+
+.do-list .container .list #item-list .completed .view .label {
+  display: block;
+  text-decoration: line-through;
+}
+
+.do-list .container .list #item-list .completed .view .edit {
+  display: none;
+}
+
+.do-list .container .list #item-list .completed .ver {
+  display: block;
+}
+
+.do-list .container .list #item-list #todo .view .edit {
+  display: none;
+}
+
 .do-list .container .list #item-list .todo #emi2 {
   display: none;
 }
@@ -113,22 +134,9 @@
   display: none;
 }
 
-.do-list .container .list #item-list .completed .view .label {
-  display: block;
-  text-decoration: line-through;
-}
-
-.do-list .container .list #item-list #todo .view .edit {
-  display: none;
-}
-
 .do-list .container .list #item-list #todo.editting .view .edit {
   display: block;
   border: none;
-}
-
-.do-list .container .list #item-list .completed .view .edit {
-  display: none;
 }
 
 .do-list .container .list #item-list #todo .ver {
@@ -139,20 +147,12 @@
   display: none;
 }
 
-.do-list .container .list #item-list .completed .ver {
-  display: block;
-}
-
 .do-list .container .list #item-list #todo .trash {
   display: none;
 }
 
 .do-list .container .list #item-list #todo.editting .trash {
   display: block;
-}
-
-.do-list .container .list #item-list .completed .trash {
-  display: none;
 }
 
 .do-list .container .link-button {
