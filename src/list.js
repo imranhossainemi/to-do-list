@@ -40,8 +40,8 @@ export default class List {
         </button>
         
         <div class="view">
-          <label class="label" tabindex="0" for="${elem.index + index}">${elem.description}</label>
-          <input type="text" class="edit input" maxlength="255" id="${index}" name="${elem.index + index}" value="${elem.description}" >
+          <label class="label" tabindex="0" for="${elem.index}">${elem.description}</label>
+          <input type="text" class="edit input" maxlength="255" id="${index}" name="${elem.index}" value="${elem.description}" >
         </div>
     
         <div class="ver"><i class="fa-sharp fa-solid fa-ellipsis-vertical"></i></div>
